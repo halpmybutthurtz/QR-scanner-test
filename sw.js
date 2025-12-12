@@ -3,7 +3,6 @@ const RUNTIME_CACHE = 'qr-scanner-runtime';
 
 // Files to cache on install
 const urlsToCache = [
-  '/',
   'index.html',
   'qr-scanner.js',
   'qr-scanner.css',
@@ -23,7 +22,7 @@ const urlsToCache = [
   'icons/icon-512.png',
   'icons/icon-180.png',  // iOS
   // Add manifest
-  '/manifest.json'
+  'manifest.json'
 ];
 
 // Install event - cache all static assets
