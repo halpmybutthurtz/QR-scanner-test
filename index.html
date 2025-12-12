@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#4285f4">
+    <meta name="description" content="Scan and manage device QR codes to export to XML for offline assignment">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="QR Scanner">
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="/icons/icon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="qr-scanner.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><img class="logo" src="src/header.png"></h1>
+            <p style="font-family:'Segoe UI', Tahoma;font-size:14px">scan and manage device QR codes to export to XML for offline assignment</p>
+        </div>
+
+        <div class="content">
+            <!-- Setup Form -->
+            <div id="setupForm">
+                <div class="form-group">
+                    <label for="listTitle">speaker name</label>
+                    <input type="text" id="listTitle" placeholder="enter name of speaker zone (e.g., PA SL)">
+                </div>
+
+                <div class="form-group">
+                    <label for="numDevices">number of devices to scan</label>
+                    <input type="number" id="numDevices" min="1" placeholder="enter number of devices">
+                </div>
+
+                <button class="btn-primary" onclick="startScanning()"><img class="icon" src="src/fm-main-fullscreen-hi.png">start scan</button>
+            </div>
+
+            <!-- Scanner Section -->
+            <div id="scannerSection" class="hidden">
+                <div class="camera-permission">
+                    <strong>Camera Access Required</strong>
+                    <p style="margin-top: 8px; font-size: 14px;">This app needs camera access to scan QR codes. If prompted, please allow camera permissions in your browser settings.</p>
+                </div>
+
+                <div class="form-group" id="cameraSelection" style="margin-bottom: 20px;">
+                    <label for="cameraSelect">select camera</label>
+                    <select id="cameraSelect">
+                        <option value="">loading cameras...</option>
+                    </select>
+                </div>
+
+                <div class="scan-status">
+                    <h3>
+                    <p id="scanCount">scanned: 0 / 0</p>
+                    </h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div id="reader"></div>
+
+                <div id="duplicateAlert" class="duplicate-alert hidden">This QR code has already been scanned!</div>
+
+                <button class="btn-primary" onclick="skipCurrentScan()"><img class="icon" src="src/fm-next.png">skip device</button>
+                <button class="btn-secondary" onclick="stopAndReturn()"><img class="icon" src="src/fm-clear.png">stop scan</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="hidden">
+                <h2 style="margin-bottom: 20px; color: #a0a0a0;">scanned results</h2>
+                
+                <div id="scannedList" class="scanned-list"></div>
+
+                <button class="btn-success" onclick="saveToXML()"><img class="icon" src="src/fm-save.png">save XML</button>
+                <button class="btn-secondary" onclick="resetApp()"><img class="icon" src="src/fm-add.png">new scan</button>
+
+                <div id="successMessage" class="success-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your QR scanner logic -->
+    <script src="qr-scanner.js"></script>
+    
+    <!-- Service Worker Registration - MUST BE AFTER qr-scanner.js -->
+    <script src="sw-registration.js"></script>
+</body>
+</html>
