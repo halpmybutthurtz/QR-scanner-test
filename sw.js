@@ -4,24 +4,24 @@ const RUNTIME_CACHE = 'qr-scanner-runtime';
 // Files to cache on install
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/qr-scanner.js',
-  '/qr-scanner.css',
+  'index.html',
+  'qr-scanner.js',
+  'qr-scanner.css',
   // Html5-qrcode library from CDN
   'https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js',
   // Images/icons from your app
-  '/src/header.png',
-  '/src/fm-main-fullscreen-hi.png',
-  '/src/fm-next.png',
-  '/src/fm-clear.png',
-  '/src/fm-save.png',
-  '/src/fm-add.png',
-  '/src/fm-right.png',
-  '/src/fm-trash.png',
+  'src/header.png',
+  'src/fm-main-fullscreen-hi.png',
+  'src/fm-next.png',
+  'src/fm-clear.png',
+  'src/fm-save.png',
+  'src/fm-add.png',
+  'src/fm-right.png',
+  'src/fm-trash.png',
   // PWA icons (add these when you create them)
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/icon-180.png',  // iOS
+  'icons/icon-192.png',
+  'icons/icon-512.png',
+  'icons/icon-180.png',  // iOS
   // Add manifest
   '/manifest.json'
 ];
