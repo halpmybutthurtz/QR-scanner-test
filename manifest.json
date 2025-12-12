@@ -9,19 +9,19 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icons/icon-180.png",
+      "src": "icons/icon-180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -29,19 +29,19 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/screenshot1.jpg",
+      "src": "screenshots/screenshot1.jpg",
       "sizes": "1080x1391",
       "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
-      "src": "/screenshots/screenshot2.jpg",
+      "src": "screenshots/screenshot2.jpg",
       "sizes": "386x800",
       "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
-      "src": "/screenshots/screenshot3.jpg",
+      "src": "screenshots/screenshot3.jpg",
       "sizes": "1080x2071",
       "type": "image/jpg",
       "form_factor": "narrow"
